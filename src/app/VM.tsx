@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { Coins, DollarSign } from "lucide-react";
 
@@ -46,10 +47,24 @@ export function VendingMachine() {
   }, [state, selectedProduct, insertedMoney]);
 
   const handleProductSelection = (product: (typeof products)[0]) => {
-    if (state === "IDLE") {
+    if (
+      state === "IDLE" ||
+      state === "PRODUCT_SELECTED" ||
+      state === "PAYMENT_PENDING"
+    ) {
       setSelectedProduct(product);
       setDisplay(`${product.name}: $${product.price.toFixed(2)}`);
       setState("PRODUCT_SELECTED");
+
+      if (insertedMoney > 0) {
+        setDisplay(
+          `${product.name}: $${product.price.toFixed(2)} (Returned: $${insertedMoney.toFixed(2)})`,
+        );
+        setInsertedMoney(0);
+        setTimeout(() => {
+          setDisplay(`${product.name}: $${product.price.toFixed(2)}`);
+        }, 2000);
+      }
     }
   };
 
