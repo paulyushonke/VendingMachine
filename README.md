@@ -11,7 +11,6 @@ Snack-O-Matic" is a React-based virtual vending machine simulation developed as 
 
 ## Technologies Used
 
-- React
 - TypeScript
 - Tailwind CSS
 - Lucide React (for icons)
