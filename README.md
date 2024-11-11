@@ -1,6 +1,6 @@
 # Snack-O-Matic Vending Machine🧃
 
-Snack-O-Matic is a React-based virtual vending machine simulation. It provides a fun and interactive way to demonstrate state management and user interactions in a React application.
+Snack-O-Matic" is a React-based virtual vending machine simulation developed as a semester project for the Computer Math course. It provides a fun and interactive way to demonstrate state management and user interactions in a React application.
 
 ## Features
 
